@@ -266,14 +266,43 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((idx) => (
+            {[
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-haircut-1-A2RBsYo8CDki2rzH9f4wY9.webp",
+                title: "Modern Fade Haircut",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-beard-1-jRYVoqGzLFxjafc5voPfPQ.webp",
+                title: "Premium Beard Grooming",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-haircut-2-Y63QZHQ7oZQ9NjyfN6r6ZE.webp",
+                title: "Textured Haircut",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-styling-1-3AJcZExCSSFedTELmgMDGD.webp",
+                title: "Professional Styling",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-beard-2-AcDHUzYd584qxJ48RZsiYp.webp",
+                title: "Beard Shaping",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663768090420/YisFzkbkW28PAQffAkGsUq/gallery-haircut-3-92RZ3qKPZRhBW6CFzoeocM.webp",
+                title: "Classic Haircut",
+              },
+            ].map((item, idx) => (
               <div
                 key={idx}
                 className="relative h-64 bg-secondary rounded-sm overflow-hidden group cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent group-hover:from-accent/40 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-accent text-4xl">📸</span>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-end p-4">
+                  <p className="text-white font-semibold text-sm">{item.title}</p>
                 </div>
               </div>
             ))}
